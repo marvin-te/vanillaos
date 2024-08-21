@@ -36,6 +36,11 @@ stages:
   #   includes:
   #     - modules/60-install-displaylink-debian.yml
 
+  - name: apt-update
+    type: shell
+    commands:
+      - apt-get update
+
   - name: remote-packages  # install packages from remote repositories
     type: apt
     source:
