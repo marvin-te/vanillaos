@@ -31,6 +31,11 @@ stages:
       - modules/20-pull-synaptics-keyring.yml
       - modules/50-install-debs.yml
 
+  - name: apt-get update  # needed after installing the synaptics keyring and repos
+    type: shell
+    commands:
+      - apt-get update
+
   - name: remote-packages  # install packages from remote repositories
     type: apt
     source:
