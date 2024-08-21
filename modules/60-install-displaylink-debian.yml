@@ -1,7 +1,7 @@
 name: install-displaylink-driver
 type: shell
 commands:
-  - apt-get install git
+  - apt-get install -y git
   - git clone https://github.com/AdnanHodzic/displaylink-debian.git
   - cd displaylink-debian
   - ./displaylink-debian.sh --debug
