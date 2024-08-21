@@ -1,8 +1,11 @@
 name: install-displaylink-driver
 type: shell
 commands:
+  - mkdir displaylink-install
+  - cd displaylink-install
   - wget -O displaylink.zip https://www.synaptics.com/sites/default/files/exe_files/2024-05/DisplayLink%20USB%20Graphics%20Software%20for%20Ubuntu6.0-EXE.zip
   - unzip displaylink.zip -d displaylink
   - chmod +x displaylink/displaylink-driver-*.run
-  - bash displaylink/displaylink-driver-*.run
-  - rm -rf displaylink*
+  - SYSTEMINITDAEMON=systemd ./displaylink/displaylink-driver-*.run
+  - cd ..
+  - rm -rf displaylink-install
