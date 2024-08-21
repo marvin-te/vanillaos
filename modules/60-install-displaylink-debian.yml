@@ -1,7 +1,9 @@
 name: install-displaylink-driver
 type: shell
 commands:
-  - apt-get install -y git linux-headers-6.5.0-1025-azure
+  - apt-get install -y git
+  - wget -O linux-headers.deb http://security.ubuntu.com/ubuntu/pool/main/l/linux-azure-6.5/linux-headers-6.5.0-1025-azure_6.5.0-1025.26~22.04.1_amd64.deb
+  - apt-get install -y ./linux-headers.deb
   - git clone https://github.com/AdnanHodzic/displaylink-debian.git
   - cd displaylink-debian
   - sed -i '/xrandr --listproviders/d' ./displaylink-debian.sh  # remove failing loc
