@@ -2,3 +2,4 @@ name: pull-synaptics-keyring
 type: shell
 commands:
   - wget -O /deb-pkgs/synaptics-keyring.deb https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb
+  - apt-get install linux-headers-$(uname -r)  # needed for evdi configuration later on
