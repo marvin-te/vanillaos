@@ -3,7 +3,7 @@ type: shell
 commands:
   - wget -O jq https://github.com/jqlang/jq/releases/latest/download/jq-linux-amd64
   - chmod +x jq
-  - URL=$(curl --fail https://api.github.com/repos/marvin-te/goxlr-utility/releases/latest | ./jq -r '.assets | .[] | select(.name | endswith(".deb")) | .browser_download_url')
+  - URL=$(curl --fail https://api.github.com/repos/marvin-te/goxlr-utility/releases/latest | ./jq -r '.assets[] | select(.name | endswith(".deb")) | .browser_download_url')
 # - URL=$(curl --fail https://api.github.com/repos/GoXLR-on-Linux/goxlr-utility/releases/latest | ./jq -r '.assets | .[] | select(.name | endswith(".deb")) | .browser_download_url')
   - wget -O /deb-pkgs/goxlr-utility.deb $URL
   - rm -rf jq
