@@ -1,0 +1,7 @@
+name: pull-goxlr
+type: shell
+commands:
+  - wget -O jq https://github.com/jqlang/jq/releases/latest/download/jq-linux-amd64
+  - URL=$(curl https://api.github.com/repos/GoXLR-on-Linux/goxlr-utility/releases/latest | ./jq -r '.assets | .[] | select(.name | endswith(".deb")) | .browser_download_url')
+  - wget -O /deb-pkgs/goxlr-utility.deb $URL
+  - rm -rf jq
