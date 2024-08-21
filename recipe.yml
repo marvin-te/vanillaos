@@ -35,6 +35,7 @@ stages:
     type: apt
     source:
       packages:
+        - linux-headers-generic
         - displaylink-driver
   
   # Put your custom actions before this comment
@@ -48,7 +49,7 @@ stages:
   - name: cleanup
     type: shell
     commands:
-      - apt-get remove -y linux-headers-$(uname -r)
+      - apt-get remove -y linux-headers-generic
       - apt-get autoremove -y
       - apt-get clean
       - lpkg --lock
