@@ -9,4 +9,4 @@ commands:
   - sed -i '/graphics_vendor/d' ./displaylink-debian.sh  # remove failing loc
   - sed -i '/graphics_subcard/d' ./displaylink-debian.sh  # remove failing loc
   - sed -i -e 's/default=N/default=Y/g' ./displaylink-debian.sh # default yes
-  - ./displaylink-debian.sh --debug
+  - ./displaylink-debian.sh --install
