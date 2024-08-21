@@ -31,11 +31,6 @@ stages:
       - modules/20-pull-synaptics-keyring.yml
       - modules/50-install-debs.yml
 
-  - name: apt-update  # refresh apt caches after adding synaptics keyring and repo
-    type: shell
-    commands:
-      - apt-get update
-
   - name: remote-packages  # install packages from remote repositories
     type: apt
     source:
