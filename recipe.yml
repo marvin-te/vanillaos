@@ -27,7 +27,7 @@ stages:
   - name: local-packages  # pull debian files from the web and install them
     type: includes
     includes:
-      - modules/20-pull-goxlr.yml
+      # - modules/20-pull-goxlr.yml
       - modules/20-pull-synaptics-keyring.yml
       - modules/50-install-debs.yml
 
