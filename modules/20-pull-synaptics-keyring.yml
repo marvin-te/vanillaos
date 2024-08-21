@@ -2,5 +2,5 @@ name: pull-synaptics-keyring
 type: shell
 commands:
   - wget -O /deb-pkgs/synaptics-keyring.deb https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb
-  - wget -O /deb-pkgs/linux-headers_dependency.deb https://launchpadlibrarian.net/739025132/linux-azure-6.5-headers-6.5.0-1025_6.5.0-1025.26~22.04.1_all.deb
-  - wget -O /deb-pkgs/linux-headers.deb http://security.ubuntu.com/ubuntu/pool/main/l/linux-azure-6.5/linux-headers-6.5.0-1025-azure_6.5.0-1025.26~22.04.1_amd64.deb
+  - wget -O /deb-pkgs/01-linux-headers_dependency.deb https://launchpadlibrarian.net/739025132/linux-azure-6.5-headers-6.5.0-1025_6.5.0-1025.26~22.04.1_all.deb
+  - wget -O /deb-pkgs/02-linux-headers.deb http://security.ubuntu.com/ubuntu/pool/main/l/linux-azure-6.5/linux-headers-6.5.0-1025-azure_6.5.0-1025.26~22.04.1_amd64.deb
