@@ -4,4 +4,5 @@ commands:
   - apt-get install -y git
   - git clone https://github.com/AdnanHodzic/displaylink-debian.git
   - cd displaylink-debian
+  - sed -i '/xrandr --listproviders/d' ./displaylink-debian.sh  # remove failing loc
   - ./displaylink-debian.sh --debug
