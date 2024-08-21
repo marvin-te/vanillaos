@@ -45,6 +45,7 @@ stages:
     type: apt
     source:
       packages:
+        - evdi-dkms
         - displaylink-driver
         - gnome-tweaks
   
