@@ -28,25 +28,12 @@ stages:
     type: includes
     includes:
       - modules/20-pull-goxlr.yml
-      #- modules/20-pull-synaptics-keyring.yml
       - modules/50-install-debs.yml
-
-  # - name: non-standard-installs  # everything that is more complicated than `apt-get install`
-  #   type: includes
-  #   includes:
-  #     - modules/60-install-displaylink-debian.yml
-
-  # - name: apt-update
-  #   type: shell
-  #   commands:
-  #     - apt-get update
 
   - name: remote-packages  # install packages from remote repositories
     type: apt
     source:
       packages:
-        #- evdi-dkms
-        #- displaylink-driver
         - gnome-tweaks
   
   # Put your custom actions before this comment
