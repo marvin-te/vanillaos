@@ -1,0 +1,5 @@
+name: pull-docker-desktop
+type: shell
+commands:
+  - bash /deb-pkgs/add-docker-gpg.sh
+  - wget -O /deb-pkgs/docker-desktop.deb https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb
