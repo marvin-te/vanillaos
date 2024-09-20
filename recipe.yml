@@ -24,10 +24,14 @@ stages:
   ##############################################
   # Put your custom actions behind this comment
 
-  - name: local-packages  # pull debian files from the web and install them
+  - name: preparations  # do everything needed for the following steps
     type: includes
     includes:
       - modules/10-add-docker-repo.yml
+
+  - name: local-packages  # pull debian files from the web and install them
+    type: includes
+    includes:
       #- modules/20-pull-docker-desktop.yml
       - modules/20-pull-goxlr.yml
       - modules/50-install-debs.yml
@@ -36,6 +40,7 @@ stages:
     type: apt
     source:
       packages:
+        - libfuse2
         - gnome-tweaks
         - docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
   
