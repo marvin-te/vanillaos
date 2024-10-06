@@ -15,6 +15,21 @@ env:
   BUILDX_NO_DEFAULT_ATTESTATIONS: 1
 
 jobs:
+  trigger-nvidia-run:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger workflow on secondary branch
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.WORKFLOW_TRIGGER_PAT }}
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'vib-build.yml',
+              ref: 'nvidia'
+            })
   verify_image:
     runs-on: ubuntu-latest
     steps:
